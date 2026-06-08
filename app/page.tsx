@@ -15,11 +15,11 @@ export default function Home() {
           ROAM MISSOULA
         </div>
         <div style={{display:'flex',gap:32,alignItems:'center'}}>
-          {['Outdoors','Eat & Drink','Shops','Events','Stay'].map(link => (
-            <a key={link} href="#" style={{fontSize:12,fontWeight:500,color:'rgba(245,240,232,0.7)',textDecoration:'none',letterSpacing:1.5,textTransform:'uppercase' as const}}>
-              {link}
-            </a>
-          ))}
+          {[['Outdoors','/outdoors'],['Eat & Drink','/eat-and-drink'],['Shops','/shops'],['Events','/events'],['Stay','/stay']].map(([label,href]) => (
+  <a key={label} href={href} style={{fontSize:12,fontWeight:500,color:'rgba(245,240,232,0.7)',textDecoration:'none',letterSpacing:1.5,textTransform:'uppercase' as const}}>
+    {label}
+  </a>
+))}
           <a href="#" style={{background:'var(--amber)',color:'var(--snow)',fontSize:12,fontWeight:500,padding:'8px 20px',textDecoration:'none',letterSpacing:1,textTransform:'uppercase' as const}}>
             List your business
           </a>
