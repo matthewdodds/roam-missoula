@@ -1,8 +1,8 @@
 'use client';
+
 export default function Home() {
   return (
     <>
-      {/* NAV */}
       <nav style={{
         position:'fixed',top:0,left:0,right:0,zIndex:100,
         display:'flex',alignItems:'center',justifyContent:'space-between',
@@ -16,17 +16,16 @@ export default function Home() {
         </div>
         <div style={{display:'flex',gap:32,alignItems:'center'}}>
           {[['Outdoors','/outdoors'],['Eat & Drink','/eat-and-drink'],['Shops','/shops'],['Events','/events'],['Stay','/stay']].map(([label,href]) => (
-  <a key={label} href={href} style={{fontSize:12,fontWeight:500,color:'rgba(245,240,232,0.7)',textDecoration:'none',letterSpacing:1.5,textTransform:'uppercase' as const}}>
-    {label}
-  </a>
-))}
-          <a href="#" style={{background:'var(--amber)',color:'var(--snow)',fontSize:12,fontWeight:500,padding:'8px 20px',textDecoration:'none',letterSpacing:1,textTransform:'uppercase' as const}}>
+            <a key={label} href={href} style={{fontSize:12,fontWeight:500,color:'rgba(245,240,232,0.7)',textDecoration:'none',letterSpacing:1.5,textTransform:'uppercase' as const}}>
+              {label}
+            </a>
+          ))}
+          <a href="/list-your-business" style={{background:'var(--amber)',color:'var(--snow)',fontSize:12,fontWeight:500,padding:'8px 20px',textDecoration:'none',letterSpacing:1,textTransform:'uppercase' as const}}>
             List your business
           </a>
         </div>
       </nav>
 
-      {/* HERO */}
       <section style={{minHeight:'100vh',background:'var(--pine)',position:'relative',display:'flex',flexDirection:'column',justifyContent:'flex-end',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:0,display:'flex',alignItems:'flex-end'}}>
           <svg viewBox="0 0 1440 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'75%'}}>
@@ -59,30 +58,29 @@ export default function Home() {
           <p style={{fontSize:16,fontWeight:300,color:'rgba(245,240,232,0.65)',maxWidth:420,lineHeight:1.7,marginBottom:40}}>
             Trails, rivers, breweries, hidden gems. Everything worth finding in the Garden City — all in one place.
           </p>
-          <input type="text" placeholder="Search trails, restaurants, shops..." style={{
-  flex:1,background:'rgba(245,240,232,0.1)',
-  borderTop:'1px solid rgba(200,133,42,0.4)',
-  borderBottom:'1px solid rgba(200,133,42,0.4)',
-  borderLeft:'1px solid rgba(200,133,42,0.4)',
-  borderRight:'1px solid rgba(200,133,42,0.4)',
-  color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
-  fontSize:14,padding:'14px 20px',outline:'none'
-}}/>
- <div style={{display:'flex',maxWidth:520,border:'1px solid rgba(200,133,42,0.4)'}}>
-  <input type="text" placeholder="Search trails, restaurants, shops..." style={{
-    flex:1,background:'rgba(245,240,232,0.1)',
-    border:'none',
-    color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
-    fontSize:14,padding:'14px 20px',outline:'none'
-  }}/>
-  <button style={{
-    background:'var(--amber)',border:'none',color:'var(--snow)',
-    fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
-    letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer'
-  }}>Explore</button>
-</div>
+          <div style={{display:'flex',maxWidth:520,border:'1px solid rgba(200,133,42,0.4)'}}>
+            <input type="text" placeholder="Search trails, restaurants, shops..." style={{
+              flex:1,background:'rgba(245,240,232,0.1)',border:'none',
+              color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
+              fontSize:14,padding:'14px 20px',outline:'none'
+            }}/>
+            <button style={{
+              background:'var(--amber)',border:'none',color:'var(--snow)',
+              fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
+              letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer'
+            }}>Explore</button>
+          </div>
+          <div style={{display:'flex',gap:48,marginTop:48,paddingTop:48,borderTop:'1px solid rgba(245,240,232,0.1)'}}>
+            {[['8,000+','Local listings'],['4M','Annual visitors'],['100%','Local & independent']].map(([num,label]) => (
+              <div key={label}>
+                <span style={{fontFamily:'Playfair Display,serif',fontSize:36,fontWeight:700,color:'var(--gold)',display:'block'}}>{num}</span>
+                <span style={{fontSize:11,color:'rgba(245,240,232,0.5)',letterSpacing:1.5,textTransform:'uppercase' as const}}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CATEGORIES */}
       <section style={{padding:'80px 60px'}}>
         <p style={{fontSize:11,fontWeight:500,letterSpacing:4,textTransform:'uppercase' as const,color:'var(--amber)',marginBottom:12}}>Browse by category</p>
         <h2 style={{fontFamily:'Playfair Display,serif',fontSize:'clamp(32px,4vw,52px)',fontWeight:700,color:'var(--pine)',lineHeight:1.1,marginBottom:48}}>
@@ -90,43 +88,41 @@ export default function Home() {
         </h2>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:16}}>
           {[
-            ['⛰️','Hiking & Trails','142 listings'],
-            ['🎣','Fishing','38 listings'],
-            ['🚵','Biking','56 listings'],
-            ['🍺','Breweries','24 listings'],
-            ['🍽️','Restaurants','310 listings'],
-            ['🛶','River & Water','29 listings'],
-            ['🛍️','Local Shops','187 listings'],
-            ['🎉','Events','Live calendar'],
-          ].map(([icon,name,count]) => (
-            <div key={name} style={{
-              background:'var(--paper)',border:'1px solid rgba(26,46,30,0.1)',
-              padding:'28px 20px',cursor:'pointer',transition:'all 0.25s'
-            }}
-            onMouseEnter={e => (e.currentTarget.style.transform='translateY(-4px)')}
-            onMouseLeave={e => (e.currentTarget.style.transform='translateY(0)')}>
-              <span style={{fontSize:28,marginBottom:12,display:'block'}}>{icon}</span>
-              <span style={{fontFamily:'Playfair Display,serif',fontSize:16,fontWeight:700,color:'var(--pine)',display:'block',marginBottom:4}}>{name}</span>
-              <span style={{fontSize:12,color:'var(--bark)'}}>{count}</span>
-            </div>
+            ['⛰️','Hiking & Trails','142 listings','/outdoors'],
+            ['🎣','Fishing','38 listings','/outdoors'],
+            ['🚵','Biking','56 listings','/outdoors'],
+            ['🍺','Breweries','24 listings','/eat-and-drink'],
+            ['🍽️','Restaurants','310 listings','/eat-and-drink'],
+            ['🛶','River & Water','29 listings','/outdoors'],
+            ['🛍️','Local Shops','187 listings','/shops'],
+            ['🎉','Events','Live calendar','/events'],
+          ].map(([icon,name,count,href]) => (
+            <a key={name} href={href} style={{textDecoration:'none'}}>
+              <div style={{
+                background:'var(--paper)',border:'1px solid rgba(26,46,30,0.1)',
+                padding:'28px 20px',cursor:'pointer',transition:'all 0.25s'
+              }}
+              onMouseEnter={e=>(e.currentTarget.style.transform='translateY(-4px)')}
+              onMouseLeave={e=>(e.currentTarget.style.transform='translateY(0)')}>
+                <span style={{fontSize:28,marginBottom:12,display:'block'}}>{icon}</span>
+                <span style={{fontFamily:'Playfair Display,serif',fontSize:16,fontWeight:700,color:'var(--pine)',display:'block',marginBottom:4}}>{name}</span>
+                <span style={{fontSize:12,color:'var(--bark)'}}>{count}</span>
+              </div>
+            </a>
           ))}
         </div>
       </section>
 
-      {/* AD STRIP */}
       <div style={{background:'var(--amber)',padding:'20px 60px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
         <div>
           <div style={{fontFamily:'Playfair Display,serif',fontSize:20,fontWeight:700,color:'var(--pine)'}}>Own a Missoula business?</div>
           <div style={{fontSize:13,color:'rgba(26,46,30,0.7)',marginTop:2}}>Get a free listing today. Featured spots from $79/month.</div>
         </div>
-        <button style={{
-          background:'var(--pine)',color:'var(--gold)',border:'none',
-          fontFamily:'DM Sans,sans-serif',fontSize:11,fontWeight:500,
-          letterSpacing:2,textTransform:'uppercase' as const,padding:'12px 24px',cursor:'pointer'
-        }}>Get listed free →</button>
+        <a href="/list-your-business" style={{background:'var(--pine)',color:'var(--gold)',textDecoration:'none',fontFamily:'DM Sans,sans-serif',fontSize:11,fontWeight:500,letterSpacing:2,textTransform:'uppercase' as const,padding:'12px 24px'}}>
+          Get listed free →
+        </a>
       </div>
 
-      {/* FOOTER */}
       <footer style={{background:'var(--text)',padding:'60px',display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:48}}>
         <div>
           <div style={{fontFamily:'Cinzel,serif',fontSize:22,color:'var(--gold)',letterSpacing:3,marginBottom:12}}>ROAM MISSOULA</div>
@@ -135,14 +131,14 @@ export default function Home() {
           </p>
         </div>
         {[
-          ['Explore',['Hiking & Trails','Fishing','Breweries','Restaurants','Events']],
-          ['Business',['Free listing','Featured plans','Advertise','Dashboard']],
-          ['About',['Our story','Contact','Privacy','Terms']],
+          ['Explore',[['Hiking & Trails','/outdoors'],['Fishing','/outdoors'],['Breweries','/eat-and-drink'],['Restaurants','/eat-and-drink'],['Events','/events']]],
+          ['Business',[['Free listing','/list-your-business'],['Featured plans','/list-your-business'],['Advertise','/list-your-business'],['Dashboard','#']]],
+          ['About',[['Our story','#'],['Contact','#'],['Privacy','#'],['Terms','#']]],
         ].map(([heading, links]) => (
           <div key={heading as string}>
             <h4 style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:'uppercase' as const,color:'var(--gold)',marginBottom:16}}>{heading}</h4>
-            {(links as string[]).map(link => (
-              <a key={link} href="#" style={{display:'block',fontSize:13,color:'rgba(245,240,232,0.5)',textDecoration:'none',marginBottom:8}}>{link}</a>
+            {(links as [string,string][]).map(([link,href]) => (
+              <a key={link} href={href} style={{display:'block',fontSize:13,color:'rgba(245,240,232,0.5)',textDecoration:'none',marginBottom:8}}>{link}</a>
             ))}
           </div>
         ))}
