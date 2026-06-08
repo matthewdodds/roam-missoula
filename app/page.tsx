@@ -59,12 +59,15 @@ export default function Home() {
           <p style={{fontSize:16,fontWeight:300,color:'rgba(245,240,232,0.65)',maxWidth:420,lineHeight:1.7,marginBottom:40}}>
             Trails, rivers, breweries, hidden gems. Everything worth finding in the Garden City — all in one place.
           </p>
-          <div style={{display:'flex',maxWidth:520}}>
-            <input type="text" placeholder="Search trails, restaurants, shops..." style={{
-              flex:1,background:'rgba(245,240,232,0.1)',border:'1px solid rgba(200,133,42,0.4)',
-              borderRight:'none',color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
-              fontSize:14,padding:'14px 20px',outline:'none'
-            }}/>
+          <input type="text" placeholder="Search trails, restaurants, shops..." style={{
+  flex:1,background:'rgba(245,240,232,0.1)',
+  borderTop:'1px solid rgba(200,133,42,0.4)',
+  borderBottom:'1px solid rgba(200,133,42,0.4)',
+  borderLeft:'1px solid rgba(200,133,42,0.4)',
+  borderRight:'none',
+  color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
+  fontSize:14,padding:'14px 20px',outline:'none'
+}}/>
             <button style={{
               background:'var(--amber)',border:'none',color:'var(--snow)',
               fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
