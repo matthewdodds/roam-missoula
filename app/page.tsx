@@ -68,23 +68,19 @@ export default function Home() {
   color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
   fontSize:14,padding:'14px 20px',outline:'none'
 }}/>
-            <button style={{
-  background:'var(--amber)',border:'none',color:'var(--snow)',
-  fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
-  letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer',
-  borderLeft:'1px solid rgba(200,133,42,0.4)'
-}}>Explore</button>
-          </div>
-          <div style={{display:'flex',gap:48,marginTop:48,paddingTop:48,borderTop:'1px solid rgba(245,240,232,0.1)'}}>
-            {[['8,000+','Local listings'],['4M','Annual visitors'],['100%','Local & independent']].map(([num,label]) => (
-              <div key={label}>
-                <span style={{fontFamily:'Playfair Display,serif',fontSize:36,fontWeight:700,color:'var(--gold)',display:'block'}}>{num}</span>
-                <span style={{fontSize:11,color:'rgba(245,240,232,0.5)',letterSpacing:1.5,textTransform:'uppercase' as const}}>{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+ <div style={{display:'flex',maxWidth:520,border:'1px solid rgba(200,133,42,0.4)'}}>
+  <input type="text" placeholder="Search trails, restaurants, shops..." style={{
+    flex:1,background:'rgba(245,240,232,0.1)',
+    border:'none',
+    color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
+    fontSize:14,padding:'14px 20px',outline:'none'
+  }}/>
+  <button style={{
+    background:'var(--amber)',border:'none',color:'var(--snow)',
+    fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
+    letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer'
+  }}>Explore</button>
+</div>
 
       {/* CATEGORIES */}
       <section style={{padding:'80px 60px'}}>
