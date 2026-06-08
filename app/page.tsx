@@ -64,15 +64,16 @@ export default function Home() {
   borderTop:'1px solid rgba(200,133,42,0.4)',
   borderBottom:'1px solid rgba(200,133,42,0.4)',
   borderLeft:'1px solid rgba(200,133,42,0.4)',
-  borderRight:'none',
+  borderRight:'1px solid rgba(200,133,42,0.4)',
   color:'var(--cream)',fontFamily:'DM Sans,sans-serif',
   fontSize:14,padding:'14px 20px',outline:'none'
 }}/>
             <button style={{
-              background:'var(--amber)',border:'none',color:'var(--snow)',
-              fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
-              letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer'
-            }}>Explore</button>
+  background:'var(--amber)',border:'none',color:'var(--snow)',
+  fontFamily:'DM Sans,sans-serif',fontSize:12,fontWeight:500,
+  letterSpacing:1.5,textTransform:'uppercase' as const,padding:'14px 28px',cursor:'pointer',
+  borderLeft:'1px solid rgba(200,133,42,0.4)'
+}}>Explore</button>
           </div>
           <div style={{display:'flex',gap:48,marginTop:48,paddingTop:48,borderTop:'1px solid rgba(245,240,232,0.1)'}}>
             {[['8,000+','Local listings'],['4M','Annual visitors'],['100%','Local & independent']].map(([num,label]) => (
